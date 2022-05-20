@@ -22,4 +22,21 @@ const gameBoard = (() => {
     return {createBoard};
 })();
 
-gameBoard.createBoard();
+//locate the gameboard tiles in the html
+const boardTiles = document.querySelectorAll('.gameBoard>div');
+
+boardTiles.forEach((boardTile)=> {
+    boardTile.addEventListener('click', () => {
+        //
+    })
+})
+
+//player 1 logic
+const playerOne = (input) => {
+    return {input};
+}
+
+//player 2 logic
+const playerTwo = (input) => {
+    return {input};
+}
