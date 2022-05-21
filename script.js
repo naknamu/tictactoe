@@ -55,74 +55,105 @@ const winner = (() => {
     const check = () => {
         //PLAYER ONE ROWS
         if (gameBoard.myArray[0] == playerOne.marker && gameBoard.myArray[1] == playerOne.marker && gameBoard.myArray[2] == playerOne.marker){
-            console.log(playerOne.name + ' WON!');
-            //call gameover fucntion
+            //display winnder
+            displayWinner(playerOne.name);
+            //call gameover function
             gameOver.disableBoard();
         }
         else if (gameBoard.myArray[3] == playerOne.marker && gameBoard.myArray[4] == playerOne.marker && gameBoard.myArray[5] == playerOne.marker){
-            console.log(playerOne.name + ' WON!');
-            //call gameover fucntion
+            //display winnder
+            displayWinner(playerOne.name);
+            //call gameover function
+            gameOver.disableBoard();
         }
         else if (gameBoard.myArray[6] == playerOne.marker && gameBoard.myArray[7] == playerOne.marker && gameBoard.myArray[8] == playerOne.marker){
-            console.log(playerOne.name + ' WON!');
-            //call gameover fucntion
+            //display winnder
+            displayWinner(playerOne.name);
+            //call gameover function
+            gameOver.disableBoard();
         }
         //PLAYER TWO ROWS
         if (gameBoard.myArray[0] == playerTwo.marker && gameBoard.myArray[1] == playerTwo.marker && gameBoard.myArray[2] == playerTwo.marker){
-            console.log(playerTwo.name + ' WON!');
-            //call gameover fucntion
+            //display winnder
+            displayWinner(playerTwo.name);
+            //call gameover function
+            gameOver.disableBoard();
         }
-        else if (gameBoard.myArray[3] == playerOne.marker && gameBoard.myArray[4] == playerOne.marker && gameBoard.myArray[5] == playerOne.marker){
-            console.log(playerTwo.name + ' WON!');
-            //call gameover fucntion
+        else if (gameBoard.myArray[3] == playerTwo.marker && gameBoard.myArray[4] == playerTwo.marker && gameBoard.myArray[5] == playerTwo.marker){
+            //display winnder
+            displayWinner(playerTwo.name);
+            //call gameover function
+            gameOver.disableBoard();
         }
-        else if (gameBoard.myArray[6] == playerOne.marker && gameBoard.myArray[7] == playerOne.marker && gameBoard.myArray[8] == playerOne.marker){
-            console.log(playerTwo.name + ' WON!');
-            //call gameover fucntion
+        else if (gameBoard.myArray[6] == playerTwo.marker && gameBoard.myArray[7] == playerTwo.marker && gameBoard.myArray[8] == playerTwo.marker){
+            //display winnder
+            displayWinner(playerTwo.name);
+            //call gameover function
+            gameOver.disableBoard();
         }
         //PLAYER ONE COLUMN
         if (gameBoard.myArray[0] == playerOne.marker && gameBoard.myArray[3] == playerOne.marker && gameBoard.myArray[6] == playerOne.marker){
-            console.log(playerOne.name + ' WON!');
-            //call gameover fucntion
+            //display winnder
+            displayWinner(playerOne.name);
+            //call gameover function
+            gameOver.disableBoard();
         }
         else if (gameBoard.myArray[1] == playerOne.marker && gameBoard.myArray[4] == playerOne.marker && gameBoard.myArray[7] == playerOne.marker){
-            console.log(playerOne.name + ' WON!');
-            //call gameover fucntion
+            //display winnder
+            displayWinner(playerOne.name);
+            //call gameover function
+            gameOver.disableBoard();
         }
         else if (gameBoard.myArray[2] == playerOne.marker && gameBoard.myArray[5] == playerOne.marker && gameBoard.myArray[8] == playerOne.marker){
-            console.log(playerOne.name + ' WON!');
-            //call gameover fucntion
+            //display winnder
+            displayWinner(playerOne.name);
+            //call gameover function
+            gameOver.disableBoard();
         }
         //PLAYER TWO COLUMN
         if (gameBoard.myArray[0] == playerTwo.marker && gameBoard.myArray[3] == playerTwo.marker && gameBoard.myArray[6] == playerTwo.marker){
-            console.log(playerTwo.name + ' WON!');
-            //call gameover fucntion
+            //display winnder
+            displayWinner(playerTwo.name);
+            //call gameover function
+            gameOver.disableBoard();
         }
         else if (gameBoard.myArray[1] == playerTwo.marker && gameBoard.myArray[4] == playerTwo.marker && gameBoard.myArray[7] == playerTwo.marker){
-            console.log(playerTwo.name + ' WON!');
-            //call gameover fucntion
+            //display winnder
+            displayWinner(playerTwo.name);
+            //call gameover function
+            gameOver.disableBoard();
         }
         else if (gameBoard.myArray[2] == playerTwo.marker && gameBoard.myArray[5] == playerTwo.marker && gameBoard.myArray[8] == playerTwo.marker){
-            console.log(playerTwo.name + ' WON!');
-            //call gameover fucntion
+            //display winnder
+            displayWinner(playerTwo.name);
+            //call gameover function
+            gameOver.disableBoard();
         }
         //PLAYER ONE DIAGONAL
         if (gameBoard.myArray[0] == playerOne.marker && gameBoard.myArray[4] == playerOne.marker && gameBoard.myArray[8] == playerOne.marker){
-            console.log(playerOne.name + ' WON!');
-            //call gameover fucntion
+            //display winnder
+            displayWinner(playerOne.name);
+            //call gameover function
+            gameOver.disableBoard();
         }
         else if (gameBoard.myArray[2] == playerOne.marker && gameBoard.myArray[4] == playerOne.marker && gameBoard.myArray[6] == playerOne.marker){
-            console.log(playerOne.name + ' WON!');
-            //call gameover fucntion
+            //display winnder
+            displayWinner(playerOne.name);
+            //call gameover function
+            gameOver.disableBoard();
         }
         //PLAYER TWO DIAGONAL
         if (gameBoard.myArray[0] == playerTwo.marker && gameBoard.myArray[4] == playerTwo.marker && gameBoard.myArray[8] == playerTwo.marker){
-            console.log(playerTwo.name + ' WON!');
-            //call gameover fucntion
+            //display winnder
+            displayWinner(playerTwo.name);
+            //call gameover function
+            gameOver.disableBoard();
         }
         else if (gameBoard.myArray[2] == playerTwo.marker && gameBoard.myArray[4] == playerTwo.marker && gameBoard.myArray[6] == playerTwo.marker){
-            console.log(playerTwo.name + ' WON!');
-            //call gameover fucntion
+            //display winnder
+            displayWinner(playerTwo.name);
+            //call gameover function
+            gameOver.disableBoard();
         }
     }
     return {check};
@@ -135,3 +166,10 @@ const gameOver = (() => {
     }
     return {disableBoard};
 })();
+
+const result = document.querySelector('.result');
+
+//display winner result to html document
+const displayWinner = (player) => {
+    result.textContent = player + ' Won!';
+}
