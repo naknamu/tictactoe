@@ -23,19 +23,20 @@ const boardTiles = document.querySelectorAll('.gameBoard>div');
 boardTiles.forEach((boardTile)=> {
     boardTile.addEventListener('click', () => {
         //player taking turns in playing
-        if (playerOne.turn)
+        if (playerOne.turn && boardTile.textContent != playerTwo.marker)
         {
             boardTile.textContent = playerOne.marker;
             playerOne.turn = false;
             playerTwo.turn = true;
         } 
-        else {
+        else if (playerTwo.turn && boardTile.textContent != playerOne.marker) {
             boardTile.textContent = playerTwo.marker;
             playerTwo.turn = false;
             playerOne.turn = true;
         }
+        //assign board tile content to the gameboard array
         gameBoard.myArray[boardTile.id] = boardTile.textContent;
-        console.log(gameBoard.myArray[boardTile.id]);
+        //check game wiiner
         winner.check();
     })
 })
@@ -113,7 +114,6 @@ const winner = (() => {
             console.log(playerTwo.name + ' WON!');
             //call gameover fucntion
         }
-
     }
     return {check};
 })();
