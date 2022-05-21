@@ -173,3 +173,23 @@ const result = document.querySelector('.result');
 const displayWinner = (player) => {
     result.textContent = player + ' Won!';
 }
+//remove display winner
+const removeWinner = () => {
+    result.textContent = '';
+}
+
+//locate restart button in html document
+const restartBtn = document.querySelector('.restart>button');
+
+restartBtn.addEventListener('click', () => {
+    boardTiles.forEach((boardTile) => {
+        //clean game board content
+        boardTile.textContent = '';
+        //clean game board array
+        gameBoard.myArray[boardTile.id] = '';
+    })
+    //enable board
+    gameBoard.enableBoard = true;
+    //remove result winner
+    removeWinner();
+})
