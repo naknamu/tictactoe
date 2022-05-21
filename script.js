@@ -1,7 +1,8 @@
 //gameboard object
 const gameBoard = (() => {
-    let myArray = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-    return {myArray};
+    let myArray = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    let enableBoard = true;
+    return {myArray, enableBoard};
 })();
 
 //player game objects
@@ -22,22 +23,30 @@ const boardTiles = document.querySelectorAll('.gameBoard>div');
 
 boardTiles.forEach((boardTile)=> {
     boardTile.addEventListener('click', () => {
-        //player taking turns in playing
-        if (playerOne.turn && boardTile.textContent != playerTwo.marker)
+        //check if board is enabled
+        if (gameBoard.enableBoard)
         {
-            boardTile.textContent = playerOne.marker;
-            playerOne.turn = false;
-            playerTwo.turn = true;
+            //player taking turns in playing
+            if (playerOne.turn && boardTile.textContent != playerTwo.marker)
+            {
+                boardTile.textContent = playerOne.marker;
+                playerOne.turn = false;
+                playerTwo.turn = true;
+            } 
+            else if (playerTwo.turn && boardTile.textContent != playerOne.marker) {
+                boardTile.textContent = playerTwo.marker;
+                playerTwo.turn = false;
+                playerOne.turn = true;
+            }  
+            //assign boardtile text content to array value
+            gameBoard.myArray[boardTile.id] = boardTile.textContent;
+            //check winner
+            winner.check();
         } 
-        else if (playerTwo.turn && boardTile.textContent != playerOne.marker) {
-            boardTile.textContent = playerTwo.marker;
-            playerTwo.turn = false;
-            playerOne.turn = true;
+        else {
+            console.log('board is disabled');
         }
-        //assign board tile content to the gameboard array
-        gameBoard.myArray[boardTile.id] = boardTile.textContent;
-        //check game wiiner
-        winner.check();
+
     })
 })
 
@@ -48,6 +57,7 @@ const winner = (() => {
         if (gameBoard.myArray[0] == playerOne.marker && gameBoard.myArray[1] == playerOne.marker && gameBoard.myArray[2] == playerOne.marker){
             console.log(playerOne.name + ' WON!');
             //call gameover fucntion
+            gameOver.disableBoard();
         }
         else if (gameBoard.myArray[3] == playerOne.marker && gameBoard.myArray[4] == playerOne.marker && gameBoard.myArray[5] == playerOne.marker){
             console.log(playerOne.name + ' WON!');
@@ -116,4 +126,12 @@ const winner = (() => {
         }
     }
     return {check};
+})();
+
+//gameover function
+const gameOver = (() => {
+    const disableBoard = () => {
+        gameBoard.enableBoard = false;
+    }
+    return {disableBoard};
 })();
