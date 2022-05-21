@@ -26,13 +26,15 @@
 .maincontent{
     display: grid;
     place-content: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 .maincontent .result{
     font-size: 24px;
     font-weight: 700;
     text-align: center;
+    height: 40px;
+    margin-top: 20px;
 }
 
 .maincontent .gameBoard{
