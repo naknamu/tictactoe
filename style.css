@@ -9,8 +9,8 @@
 .container{
     display: grid;
     grid-template-rows: 100px 1fr 100px;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    /* width: 100vw; */
     background-color: #f0eef1;
     font-family: 'Poppins', sans-serif;
 }
@@ -25,7 +25,53 @@
 
 .maincontent{
     display: grid;
-    place-content: center;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.maincontent form{
+    display: grid;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.maincontent form .player_name{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.maincontent .player_name .title{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.maincontent form label{
+    width: 120px;
+    display: inline-block;
+    font-size: 24px;
+}
+
+.maincontent form input{
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 1px solid gray;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(232, 240, 254);
+}
+
+.maincontent form .button_submit{
+    display: flex;
+    justify-content: center;
+}
+
+.maincontent .game_ui{
+    display: grid;
+    /* justify-content: start; */
+    place-content: start;
     gap: 15px;
 }
 
@@ -34,7 +80,6 @@
     font-weight: 700;
     text-align: center;
     height: 40px;
-    margin-top: 20px;
 }
 
 .maincontent .gameBoard{
@@ -79,8 +124,8 @@
 .footer{
     display: grid;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     font-size: 18px;
     font-weight: 500;
-    padding: 10px;
+    /* padding: 10px; */
 }
